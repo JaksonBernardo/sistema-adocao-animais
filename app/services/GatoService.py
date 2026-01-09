@@ -2,6 +2,9 @@ from app.domain.GatoModel import Gato
 from app.schemas.GatoSchema import GatoCreate
 from app.repositories.GatoRepo import inserir_gato as repo_inserir_gato
 
+
+
+# SERVICE DO GATO
 async def inserir_gato(animal_data: GatoCreate) -> Gato:
 
     gato = Gato(
