@@ -20,6 +20,14 @@ O foco do projeto é aplicar **conceitos sólidos de Programação Orientada a O
 
 ---
 
+## Como utilizar
+
+- Crie o banco de dados MySQL executando os comandos que estão no arquivo da raiz do projeto database.sql
+- Crie o ambiente virtual do python usando: python -m venv venv
+- Instale as dependências do projeto: pip install -r requirements.txt
+- Execute o comando no terminal: uvicorn app.main:app --reload
+
+
 ## ⚙️ Funcionalidades Principais
 
 ### 1️⃣ Cadastro de Animais
