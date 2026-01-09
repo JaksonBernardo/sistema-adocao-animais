@@ -1,18 +1,18 @@
 
 from fastapi import APIRouter
-from app.schemas.CachorroSchema import CachorroCreate, CachorroResponse
-from app.services.CachorroService import inserir_cachorro
+from app.schemas.GatoSchema import GatoCreate, GatoResponse
+from app.services.GatoService import inserir_gato
 
-cachorro_router = APIRouter(
-    prefix = "/animal/cachorro",
-    tags = ["Cachorro"]
+gato_router = APIRouter(
+    prefix = "/animal/gato",
+    tags = ["Gato"]
 )
 
 
-@cachorro_router.post("/", response_model = CachorroResponse, status_code = 201)
-async def criar_cachorro(animal: CachorroCreate):
+@gato_router.post("/", response_model = GatoResponse, status_code = 201)
+async def criar_gato(animal: GatoCreate):
 
-    novo_animal = await inserir_cachorro(animal)
+    novo_animal = await inserir_gato(animal)
 
     return {
         "id": novo_animal.id,
@@ -27,6 +27,5 @@ async def criar_cachorro(animal: CachorroCreate):
         "necessidade_passeio": novo_animal.necessidade_passeio,
         "independencia": novo_animal.independencia
     }
-
 
 

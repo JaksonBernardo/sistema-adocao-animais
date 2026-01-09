@@ -16,4 +16,8 @@ async def inserir_animal(cur, data):
             data.status
         )
     )
+
     return cur.lastrowid
+
+
+
