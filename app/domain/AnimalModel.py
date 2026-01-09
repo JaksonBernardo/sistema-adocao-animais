@@ -1,5 +1,6 @@
+from abc import ABC, abstractmethod
 
-class Animal:
+class Animal(ABC):
 
     def __init__(self, id: int, especie: str, raca: str, nome: str,
                  sexo: str, idade: int, porte: str, temperamento: str, 
@@ -41,6 +42,14 @@ class Animal:
 
     @property
     def status(self) -> str: return self._status
+
+    @id.setter
+    def id(self, id: int) -> None:
+
+        if id < 0:
+            raise ValueError("O ID do animal não pode ser negativo.")
+        
+        self._id = id
 
     @especie.setter
     def especie(self, especie: str) -> None:
