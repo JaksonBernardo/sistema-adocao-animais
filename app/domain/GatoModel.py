@@ -1,5 +1,5 @@
 
-from .Animal import Animal
+from .AnimalModel import Animal
 
 class Gato(Animal):
 
