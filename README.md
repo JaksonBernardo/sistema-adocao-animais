@@ -1,4 +1,4 @@
-# 🐾 Sistema de Adoção de Animais – CLI / API Minimal
+# 🐾 Sistema de Adoção de Animais – CLI / API Adopt
 
 ## 📌 Visão Geral
 
