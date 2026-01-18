@@ -1,12 +1,26 @@
 
 from fastapi import APIRouter, HTTPException
 from app.schemas.GatoSchema import GatoCreate, GatoUpdate, GatoResponse
-from app.services.GatoService import inserir_gato, atualizar_gato, deletar_gato
+from app.services.GatoService import inserir_gato, atualizar_gato, deletar_gato, ler_gato
 
 gato_router = APIRouter(
     prefix = "/animal/gato",
     tags = ["Gato"]
 )
+
+
+@gato_router.get("/{id_animal}", response_model = GatoResponse, status_code = 200)
+async def pesquisar_gato(id_animal: int):
+
+    try:
+
+        gato = await ler_gato(id_animal)
+
+        return gato
+    
+    except Exception as ex:
+
+        raise HTTPException(status_code = 500, detail = f"Erro ao pesquisar gato: {str(ex)}")
 
 
 @gato_router.post("/", response_model = GatoResponse, status_code = 201)

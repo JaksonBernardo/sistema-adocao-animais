@@ -3,6 +3,17 @@ from app.schemas.GatoSchema import GatoCreate, GatoUpdate
 from app.repositories.GatoRepo import repo_inserir_gato, repo_atualizar_gato, repo_pesquisar_gato_id, repo_deletar_gato
 
 
+async def ler_gato(id_animal: int) -> Gato | None:
+
+    gato = await repo_pesquisar_gato_id(id_animal)
+
+    if not gato:
+
+        raise ValueError("Animal não encontrado")
+
+    return gato
+
+
 async def inserir_gato(animal_data: GatoCreate) -> Gato:
 
     gato = Gato(

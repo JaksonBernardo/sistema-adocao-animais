@@ -26,7 +26,6 @@ class GatoUpdate(BaseModel):
     independencia: Optional[bool]
 
 
-
 class GatoResponse(AnimalResponse):
     necessidade_passeio: bool
     independencia: bool

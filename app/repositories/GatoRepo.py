@@ -51,6 +51,7 @@ async def repo_pesquisar_gato_id(id_animal: int) -> Gato | None:
 
                 raise
 
+
 async def repo_inserir_gato(data) -> int:
 
     pool = await get_pool()
