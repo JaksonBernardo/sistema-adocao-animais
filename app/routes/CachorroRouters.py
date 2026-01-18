@@ -27,6 +27,3 @@ async def criar_cachorro(animal: CachorroCreate):
         "necessidade_passeio": novo_animal.necessidade_passeio,
         "independencia": novo_animal.independencia
     }
-
-
-
