@@ -1,6 +1,6 @@
 from app.domain.GatoModel import Gato
 from app.schemas.GatoSchema import GatoCreate, GatoUpdate
-from app.repositories.GatoRepo import repo_inserir_gato, repo_atualizar_gato
+from app.repositories.GatoRepo import repo_inserir_gato, repo_atualizar_gato, repo_pesquisar_gato_id, repo_deletar_gato
 
 
 async def inserir_gato(animal_data: GatoCreate) -> Gato:
@@ -41,5 +41,20 @@ async def atualizar_gato(id_animal: int, animal_data: GatoUpdate) -> Gato:
         independencia=animal_data.independencia
     )
 
+async def deletar_gato(id_animal: int) -> None:
+
+    gato = await repo_pesquisar_gato_id(id_animal)
+
+    if not gato:
+
+        raise ValueError("Animal não encontrado")
     
+    if gato.status == "ADOTADO":
+
+        raise ValueError("Este animal não pode ser deletado pois seu status = ADOTADO")
+    
+    await repo_deletar_gato(id_animal)
+
+
+
 
