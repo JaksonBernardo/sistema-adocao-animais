@@ -120,6 +120,9 @@ class Animal(ABC):
         
         self._status = novo_status
 
+    def custo_adocao(self, estrategia_calculo: 'EstrategiaTaxa') -> float:
+        return estrategia_calculo.calcular(self)
+
     
 
     
