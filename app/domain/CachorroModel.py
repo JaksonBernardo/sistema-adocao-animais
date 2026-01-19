@@ -1,5 +1,7 @@
 
 from .AnimalModel import Animal
+from .VacinavelMixin import VacinavelMixin
+from .AdestravelMixin import AdestravelMixin
 
 class Cachorro(Animal, VacinavelMixin, AdestravelMixin):
 
