@@ -19,7 +19,6 @@ class AnimalBase(BaseModel):
 
 
 class AnimalResponse(AnimalBase):
-    id: int
     especie: str
 
     class Config:

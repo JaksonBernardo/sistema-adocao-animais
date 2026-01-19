@@ -1,0 +1,6 @@
+{
+    "idade_minima": 18,
+    "duracao_reserva": 48, // horas
+    "taxa_padrao": 100, // R$
+    "area_util_minima": 30 // m²
+}
