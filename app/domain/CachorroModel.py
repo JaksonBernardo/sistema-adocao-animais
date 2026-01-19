@@ -1,7 +1,9 @@
 
 from .AnimalModel import Animal
+from .VacinavelMixin import VacinavelMixin
+from .AdestravelMixin import AdestravelMixin
 
-class Cachorro(Animal):
+class Cachorro(Animal, VacinavelMixin, AdestravelMixin):
 
     def __init__(self, id: int, raca: str, nome: str, sexo: str, 
                  idade: int, porte: str, temperamento: str, status: str, 

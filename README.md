@@ -1,4 +1,4 @@
-# 🐾 Sistema de Adoção de Animais – CLI / API Adopt
+# 🐾 Sistema de Adoção de Animais – CLI / API Meu animal minha vida
 
 ## 📌 Visão Geral
 
@@ -24,6 +24,7 @@ O foco do projeto é aplicar **conceitos sólidos de Programação Orientada a O
 
 - Crie o banco de dados MySQL executando os comandos que estão no arquivo da raiz do projeto database.sql
 - Crie o ambiente virtual do python usando: python -m venv venv
+- Ative o ambiente virtual (Windows): venv\Scripts\activate
 - Instale as dependências do projeto: pip install -r requirements.txt
 - Execute o comando no terminal: uvicorn app.main:app --reload
 
