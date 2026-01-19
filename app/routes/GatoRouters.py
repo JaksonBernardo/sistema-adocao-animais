@@ -8,7 +8,6 @@ gato_router = APIRouter(
     tags = ["Gato"]
 )
 
-
 @gato_router.get("/{id_animal}", response_model = GatoResponse, status_code = 200)
 async def pesquisar_gato(id_animal: int):
 

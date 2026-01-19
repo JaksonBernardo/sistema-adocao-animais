@@ -13,7 +13,6 @@ async def ler_gato(id_animal: int) -> Gato | None:
 
     return gato
 
-
 async def inserir_gato(animal_data: GatoCreate) -> Gato:
 
     gato = Gato(
