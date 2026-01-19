@@ -31,7 +31,7 @@ O foco do projeto é aplicar **conceitos sólidos de Programação Orientada a O
 
 ## ⚙️ Funcionalidades Principais
 
-### 1️⃣ Cadastro de Animais
+### 1 Cadastro de Animais
 - CRUD completo de animais
 - Atributos:
   - espécie, raça, nome, sexo
@@ -46,7 +46,7 @@ O foco do projeto é aplicar **conceitos sólidos de Programação Orientada a O
 
 ---
 
-### 2️⃣ Triagem de Adotantes
+### 2 Triagem de Adotantes
 - Cadastro com:
   - nome, idade
   - tipo de moradia (casa/apartamento)
@@ -63,48 +63,7 @@ O foco do projeto é aplicar **conceitos sólidos de Programação Orientada a O
 
 ---
 
-### 3️⃣ Reserva e Adoção
-- Reserva temporária (padrão: 48h, configurável)
-- Expiração automática via comando/job
-- Adoção efetiva:
-  - geração de contrato textual
-  - cálculo de taxa de adoção por estratégia:
-    - padrão
-    - sênior (desconto)
-    - filhote (custos de vacina)
-    - cuidados especiais
-
----
-
-### 4️⃣ Lista de Espera e Prioridade
-- Fila por animal disputado
-- Priorização baseada em:
-  - pontuação de compatibilidade
-  - tempo de espera
-- Notificação interna (log/evento) ao expirar reserva
-
----
-
-### 5️⃣ Devolução, Quarentena e Reavaliação
-- Registro do motivo da devolução
-- Alteração automática de status:
-  - `DEVOLVIDO`
-  - `QUARENTENA` (saúde/comportamento)
-- Reavaliação pode resultar em:
-  - `DISPONIVEL`
-  - `INADOTAVEL`
-
----
-
-### 6️⃣ Relatórios
-- Top 5 animais mais adotáveis
-- Taxa de adoções por espécie e porte
-- Tempo médio entre entrada e adoção
-- Devoluções e adoções canceladas por motivo
-
----
-
-### 7️⃣ Configurações
+### 3 Configurações
 Arquivo `settings.json` contendo:
 - Idade mínima do adotante
 - Regras moradia × porte
@@ -145,23 +104,6 @@ Arquivo `settings.json` contendo:
 
 ---
 
-### 🔹 Padrões de Projeto
-- **Strategy** – cálculo de taxa de adoção
-- **State / Enum** – estados e transições do animal
-- **Specification (opcional)** – filtros combináveis
-- **Observer (opcional)** – notificações internas
-
----
-
-### 🔹 Tratamento de Erros
-Exceções customizadas:
-- `ReservaInvalidaError`
-- `TransicaoDeEstadoInvalidaError`
-- `PoliticaNaoAtendidaError`
-- `RepositorioError`
-
----
-
 ### 🔹 Tipagem e Documentação
 - Type hints em todo o código
 - Docstrings padrão Google ou NumPy
@@ -169,22 +111,7 @@ Exceções customizadas:
 
 ---
 
-### 🔹 Testes
-- Framework: `pytest`
-- Cobertura mínima:
-  - políticas
-  - expiração de reserva
-  - compatibilidade
-  - transições de estado
-  - estratégias de taxa
+### Rotas documentadas
 
----
+- Acesse o endpoint /docs da API
 
-## 🖥 Interface
-
-### CLI (exemplo)
-```bash
-adocao cadastrar-animal
-adocao reservar
-adocao rodar-expiracao
-adocao relatorio top
