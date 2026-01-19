@@ -97,13 +97,30 @@ class Animal(ABC):
         self._temperamento = temperamento
 
     @status.setter
-    def status(self, status: str) -> None:
-
-        if status not in ["DISPONIVEL", "RESERVADO", "ADOTADO", "DEVOLVIDO", "QUARENTENA", "INADOTAVEL"]:
-
-            raise ValueError("Status indisponível.")
+    def status(self, novo_status: str) -> None:
         
-        self._status = status
+        transicoes_validas = {
+            "DISPONIVEL": ["RESERVADO", "INADOTAVEL"],
+            "RESERVADO": ["ADOTADO", "DISPONIVEL"], 
+            "ADOTADO": ["DEVOLVIDO"],
+            "DEVOLVIDO": ["QUARENTENA", "DISPONIVEL", "INADOTAVEL"],
+            "QUARENTENA": ["DISPONIVEL", "INADOTAVEL"],
+            "INADOTAVEL": [] 
+        }
+
+        if novo_status not in ["DISPONIVEL", "RESERVADO", "ADOTADO", "DEVOLVIDO", "QUARENTENA", "INADOTAVEL"]:
+            
+            raise ValueError("Status indisponível.")
+            
+        if novo_status not in transicoes_validas.get(self._status, []):
+            
+            raise ValueError(f"Transição ilegal: Não é possível mudar de '{self._status}' para '{novo_status}'.")
+        
+        self._status = novo_status
+
+    def custo_adocao(self, estrategia_calculo: 'EstrategiaTaxa') -> float:
+        
+        return estrategia_calculo.calcular(self)
 
     
 

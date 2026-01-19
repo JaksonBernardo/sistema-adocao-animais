@@ -1,0 +1,20 @@
+{
+    "reserva": {
+        "expiracao_horas": 24,
+        "limite_por_animal": 1
+    },
+    "compatibilidade": {
+        "pesos": {
+            "estilo_vida": 0.3,
+            "espaco_casa": 0.4,
+            "tempo_disponivel": 0.3
+        },
+        "penalidade_crianca_animal_arisco": 50
+    },
+    "regras_porte": {
+        "G": {
+            "area_minima": 40,
+            "tipo_moradia_obrigatorio": ["CASA", "APARTAMENTO", "SÍTIO"]
+        }
+    }
+}
