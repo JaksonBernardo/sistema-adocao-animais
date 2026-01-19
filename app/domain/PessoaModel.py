@@ -1,5 +1,5 @@
 from abc import ABC
-from config import SETTINGS_INFO
+from app.config import SETTINGS_INFO
 
 class Pessoa(ABC):
 

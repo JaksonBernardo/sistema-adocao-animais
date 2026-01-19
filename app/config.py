@@ -13,6 +13,8 @@ class Config:
     DB_PASSWORD = os.getenv("DB_PASSWORD", "password")
     DB_NAME = os.getenv("DB_NAME", "database")
 
-SETTINGS_FILE = "settings.json"
+BASE_DIR = Path(__file__).resolve().parent.parent
+SETTINGS_FILE = BASE_DIR / "settings.json"
 
-SETTINGS_INFO = json.load(open(Path(__file__).parent.parent / SETTINGS_FILE))
+with open(SETTINGS_FILE, "r", encoding="utf-8") as f:
+    SETTINGS_INFO = json.load(f)
