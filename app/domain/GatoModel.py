@@ -1,7 +1,7 @@
 
 from .AnimalModel import Animal
 
-class Gato(Animal, VacinavelMixin, AdestravelMixin):
+class Gato(Animal, VacinavelMixin):
 
     def __init__(self, id: int, raca: str, nome: str, sexo: str, 
                  idade: int, porte: str, temperamento: str, status: str, 
