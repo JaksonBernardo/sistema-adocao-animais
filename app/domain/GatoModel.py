@@ -1,5 +1,6 @@
 
 from .AnimalModel import Animal
+from .VacinavelMixin import VacinavelMixin
 
 class Gato(Animal, VacinavelMixin):
 
